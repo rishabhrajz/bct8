@@ -325,11 +325,9 @@ projecty/
 ├── contracts/
 │   ├── PolicyContract.sol         # Policy management
 │   ├── ClaimContract.sol          # Claim processing
-│   └── IdentityRegistry.sol       # DID registry
-├── scripts/
-│   └── deploy.js                  # Contract deployment
-└── tests/
-    └── smoke-test.js              # End-to-end test
+│   └── IdentityRegistry.sol       # DID registry                 
+└── scripts/                        
+    └── deploy.js              # Contract deployment
 ```
 
 ---
