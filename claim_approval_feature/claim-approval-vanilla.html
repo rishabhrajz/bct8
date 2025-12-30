@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claim Approval (Vanilla JS)</title>
+    <style>
+        /* Basic styling to mimic Tailwind utility classes used in React version */
+        body { font-family: system-ui, -apple-system, sans-serif; padding: 20px; }
+        .container { max-width: 400px; padding: 16px; border: 1px solid #e5e7eb; border-radius: 8px; box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); }
+        .hidden { display: none !important; }
+        .input-group { margin-bottom: 16px; }
+        label { display: block; font-size: 0.875rem; font-weight: 500; color: #374151; margin-bottom: 4px; }
+        input { width: 100%; padding: 8px 12px; border: 1px solid #d1d5db; border-radius: 6px; box-sizing: border-box; }
+        
+        button {
+            width: 100%; display: flex; justify-content: center; align-items: center;
+            padding: 8px 16px; border: none; border-radius: 6px;
+            font-size: 0.875rem; font-weight: 500; color: white;
+            background-color: #2563eb; cursor: pointer;
+        }
+        button:hover { background-color: #1d4ed8; }
+        button:disabled { background-color: #60a5fa; cursor: not-allowed; }
+        
+        /* Spinner */
+        .spinner {
+            animation: spin 1s linear infinite;
+            margin-right: 8px;
+            height: 20px; width: 20px;
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            border-top-color: transparent;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* Toast */
+        #toast-container { margin-top: 16px; padding: 16px; border-radius: 6px; display: none; }
+        .toast-success { background-color: #ecfdf5; color: #065f46; }
+        .toast-error { background-color: #fef2f2; color: #991b1b; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h3 style="margin-top: 0; font-size: 1.125rem; font-weight: 600;">Claim Approval</h3>
+    
+    <div id="input-section">
+        <div class="input-group">
+            <label for="coverage-input">Coverage Amount</label>
+            <input type="number" id="coverage-input" placeholder="Enter amount" value="0">
+        </div>
+        
+        <button id="approve-btn">Approve and Pay</button>
+    </div>
+
+    <div id="toast-container" role="status" aria-live="polite"></div>
+</div>
+
+<script src="claim-approval-vanilla.js"></script>
+</body>
+</html>
